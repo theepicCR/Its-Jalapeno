@@ -1,5 +1,5 @@
 # What is It's Jalapeno?
-It's Jalapeno? is a fun, interactive guessing game surrounded around a grey little cat named Jalapeno. The objective of the game is to guess
+It's Jalapeno? is a fun, interactive guessing game surrounded around a grey little cat named Jalapeno. Inspired by the "Who's that Pokemon?" meme, objective of the game is to guess
 the names of all 10 randomized Jalapeno-nized creatures or items based on its silhouette using this formula: 
 
 ### **Name = Jalapeno + Creature/Item Silhouette**
