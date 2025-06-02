@@ -1,50 +1,16 @@
-# Welcome to your Expo app 👋
+# What is It's Jalapeno?
+It's Jalapeno? is a fun, interactive guessing game surrounded around a grey little cat named Jalapeno. Inspired by the "Who's that Pokemon?" meme, objective of the game is to guess
+the names of all 10 randomized Jalapeno-nized creatures or items based on its silhouette using this formula: 
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+### **Name = Jalapeno + Creature/Item Silhouette**
 
-## Get started
+This is obviously not an easy task - so hints are there to help you! However, if you were unable to guess the Jalapeno-mashup correctly - that's okay!
+The game will provide the name of each Jalapeno if you guessed it correctly or ran out of guesses. You can remember these names for the next games, just in case that same Jalapeno-nized 
+creature decides to show up again!
 
-1. Install dependencies
+You can play this game as many times as you want for how long you want - there's no time limit! The goal of this game is to guess them correctly, and more importantly: have fun!
 
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-   npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+# Prototype
+![image_2025-05-27_113301343](https://github.com/user-attachments/assets/c2e8a1b7-00f1-4e8e-8c7f-bd116af1cf05)
+![Screenshot 2025-05-27 112828](https://github.com/user-attachments/assets/efe71158-d7f1-4622-a0da-06745895e25f)
+![Screenshot 2025-05-27 112843](https://github.com/user-attachments/assets/3d2814d4-69f4-4e9f-a512-c680399194bd)
