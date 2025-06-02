@@ -23,6 +23,12 @@
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
+    "fonts": [
+      {
+        "asset": "../assets/fonts/JotiOne-Regular.ttf",
+        "name": "YourFont-Regular"
+      }
+    ],
     "plugins": [
       "expo-router",
       [
