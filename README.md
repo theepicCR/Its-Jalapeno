@@ -14,4 +14,3 @@ You can play this game as many times as you want for how long you want - there's
 ![image_2025-05-27_113301343](https://github.com/user-attachments/assets/c2e8a1b7-00f1-4e8e-8c7f-bd116af1cf05)
 ![Screenshot 2025-05-27 112828](https://github.com/user-attachments/assets/efe71158-d7f1-4622-a0da-06745895e25f)
 ![Screenshot 2025-05-27 112843](https://github.com/user-attachments/assets/3d2814d4-69f4-4e9f-a512-c680399194bd)
-![Screenshot 2025-05-27 112843](https://github.com/user-attachments/assets/3d2814d4-69f4-4e9f-a512-c680399194bd)
