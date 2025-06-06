@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, Pressable, ImageBackground } from "react-native";
+import { StyleSheet, Text, View, Image, Pressable, } from "react-native";
 import React from 'react';
 import { useFonts } from 'expo-font';
 import { useRouter, Link } from "expo-router"
@@ -102,7 +102,7 @@ const styles = StyleSheet.create({
   headerLogoText: {
     fontFamily: "JotiOne-Regular",
     fontSize: 54,
-    color: "#393939",
+    color: "#4A4A4A",
     textAlign: "center",
   },
   logo: {
