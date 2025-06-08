@@ -1,35 +1,27 @@
 import { StyleSheet, Text, View, Image, Pressable, } from "react-native";
 import React from 'react';
-import { useFonts } from 'expo-font';
-import { useRouter, Link } from "expo-router"
+import { useFonts } from "expo-font";
+import { useRouter, Link } from "expo-router";
+import { standardStyles } from "../styles/styles";
 
 export default function WelcomePage() {
   //setting up our navigation system
   const router = useRouter();
 
-  //loading fonts for welcome page
-  const [loadfonts] = useFonts ({
-    "JotiOne-Regular": require("../assets/fonts/JotiOne-Regular.ttf"),
-  });
-
-  if(!loadfonts) {
-    return <Text>Loading...</Text>;
-  }
-
   return (
-    <View style={styles.container}>
+    <View style={standardStyles.container}>
     {/*Header Styles*/}
-    <View style={styles.header}>
-      <View style={styles.headerContent}>
-        <Text style={styles.headerLogoText}> 
+    <View style={standardStyles.header}>
+      <View style={standardStyles.headerContent}>
+        <Text style={standardStyles.headerLogoText}> 
           It's Jalapeno?
         </Text>
-        <Image style={styles.logo}
+        <Image style={standardStyles.logo}
           source={require("../assets/images/favicon.png")}
           accessibilityLabel="It's Jalapeno Logo">
         </Image>
       </View>
-      <Text style={styles.headerAboutText}>
+      <Text style={standardStyles.headerAboutText}>
         A Game Inspired by a Meme  
       </Text>  
     </View>
@@ -62,19 +54,17 @@ export default function WelcomePage() {
     </View>
 
      {/*About page link*/}
-    <Link href="/about" style={styles.learnMoreText}>
+    <Pressable onPress={() => router.push("/about")}>
+      <Text style={styles.learnMoreText}>
       Learn More About It's Jalapeno
-    </Link>
+    </Text>
+    </Pressable>
     </View>
   );
 }
 
 //style sheet for welcome page
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#FFC8E0",
-  },
   welcomeText: {
     fontFamily: "JotiOne-Regular",
     fontSize: 128,
@@ -82,39 +72,6 @@ const styles = StyleSheet.create({
     color: "#393939",
     marginTop: 65,
     marginRight: 15,
-  },
-  header: {
-    backgroundColor: "#FF79CA",
-    borderColor: "#FF0099",
-    borderBottomWidth: 1,
-    borderTopWidth: 1,
-    borderLeftWidth: 1,
-    borderRightWidth: 1,
-    height: 130,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  headerContent: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 5,
-  },
-  headerLogoText: {
-    fontFamily: "JotiOne-Regular",
-    fontSize: 54,
-    color: "#4A4A4A",
-    textAlign: "center",
-  },
-  logo: {
-    width: 110,
-    height: 110,
-  },
-  headerAboutText: {
-    fontFamily: "JotiOne-Regular",
-    fontSize: 16,
-    color: "1E1E1E",
-    textAlign: "center",
-    bottom: 20,
   },
   buttonContent: {
     flexDirection: "row",

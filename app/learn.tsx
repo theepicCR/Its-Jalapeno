@@ -1,35 +1,26 @@
 import React from "react";
-import { useFonts } from 'expo-font';
 import { View, Text, StyleSheet, Image, ScrollView, Pressable } from "react-native";
-import { useRouter } from "expo-router"
+import { useRouter } from "expo-router";
+import { useFonts } from "expo-font";
+import { standardStyles } from "../styles/styles";
 
-export default function LearnPage() {
-      //loading fonts for welcome page
-      const [loadfonts] = useFonts ({
-        "JotiOne-Regular": require("../assets/fonts/JotiOne-Regular.ttf"),
-      });
-    
-      if(!loadfonts) {
-        return <Text>Loading...</Text>;
-      }
-
-      const router = useRouter();
-
+export default function LearnPage() {  
+  const router = useRouter();
 
     return (
-        <ScrollView style={styles.container}>
+        <ScrollView style={standardStyles.container}>
             {/*Header Styles*/}
-            <View style={styles.header}>
-                <View style={styles.headerContent}>
-                <Text style={styles.headerLogoText}> 
+            <View style={standardStyles.header}>
+                <View style={standardStyles.headerContent}>
+                <Text style={standardStyles.headerLogoText}> 
                     It's Jalapeno?
                 </Text>
-                <Image style={styles.logo}
+                <Image style={standardStyles.logo}
                     source={require("../assets/images/favicon.png")}
                     accessibilityLabel="It's Jalapeno Logo">
                 </Image>
                 </View>
-                <Text style={styles.headerAboutText}>
+                <Text style={standardStyles.headerAboutText}>
                 A Game Inspired by a Meme  
                 </Text>  
             </View>
@@ -114,51 +105,12 @@ export default function LearnPage() {
             <Pressable style={styles.letsGoButton} onPress={() => router.push("/play")}>
               <Text style={styles.letsGoText}>Let's Go!</Text>
             </Pressable>
-
         </ScrollView>
     )
 }
 
 //style sheet for welcome page
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#FFC8E0",
-  },
-  header: {
-    backgroundColor: "#FF79CA",
-    borderColor: "#FF0099",
-    borderBottomWidth: 1,
-    borderTopWidth: 1,
-    borderLeftWidth: 1,
-    borderRightWidth: 1,
-    height: 130,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  headerContent: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 5,
-  },
-  headerLogoText: {
-    fontFamily: "JotiOne-Regular",
-    fontSize: 54,
-    color: "#4A4A4A",
-    textAlign: "center",
-  },
-  logo: {
-    width: 110,
-    height: 110,
-  },
-  headerAboutText: {
-    fontFamily: "JotiOne-Regular",
-    fontSize: 16,
-    color: "1E1E1E",
-    textAlign: "center",
-    bottom: 20,
-  },
-
   LearnContainer: {
     backgroundColor: "#FF79CA",
     borderRadius: 20,
