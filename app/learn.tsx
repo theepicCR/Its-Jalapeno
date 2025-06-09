@@ -15,8 +15,9 @@ export default function LearnPage() {
                     <Pressable style={standardStyles.backButton} onPress = {() => router.replace("/")}>
                         <Text style={standardStyles.backButtonText}>{`← Back`}</Text>
                     </Pressable>
+
                     <View style={standardStyles.centerizeHeader}>
-                      <View style={standardStyles.headerContent}>
+                      <Pressable style={standardStyles.headerContent} onPress = {() => router.replace("/")}>
                         <Text style={standardStyles.headerLogoText}> 
                             It's Jalapeno?
                         </Text>
@@ -24,7 +25,7 @@ export default function LearnPage() {
                             source={require("../assets/images/favicon.png")}
                             accessibilityLabel="It's Jalapeno Logo">
                         </Image>
-                      </View>
+                      </Pressable>
                     </View>
                   </View>
                   <View style={{marginLeft: 15}}>

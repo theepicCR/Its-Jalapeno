@@ -14,7 +14,7 @@ export default function GamePage() {
                         <Text style={standardStyles.backButtonText}>{`← Back`}</Text>
                     </Pressable>
                     <View style={standardStyles.centerizeHeader}>
-                        <View style={{marginRight: 15}}>
+                        <Pressable style={{marginRight: 15}} onPress = {() => router.replace("/")}>
                             <View style={standardStyles.headerContent}>
                                 <Text style={standardStyles.headerLogoText}> 
                                     It's Jalapeno?
@@ -24,7 +24,7 @@ export default function GamePage() {
                                     accessibilityLabel="It's Jalapeno Logo">
                                 </Image>
                             </View>
-                        </View>
+                        </Pressable>
                     </View>
                 </View>
                 <Text style={standardStyles.headerAboutText}>
