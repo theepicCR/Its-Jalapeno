@@ -1,7 +1,6 @@
 import { StyleSheet, Text, View, Image, Pressable, } from "react-native";
 import React from 'react';
-import { useFonts } from "expo-font";
-import { useRouter, Link } from "expo-router";
+import { useRouter } from "expo-router";
 import { standardStyles } from "../styles/styles";
 
 export default function WelcomePage() {
@@ -41,12 +40,12 @@ export default function WelcomePage() {
 
     {/*Learn How to Play and Start Game Buttons!*/}
     <View style={styles.buttonContent}>
-      <Pressable style={styles.buttonFormat} onPress={() => router.push("/learn")}>
+      <Pressable style={styles.buttonFormat} onPress={() => router.replace("/learn")}>
         <Text style={styles.buttonText}>
           Learn How to Play
         </Text>
       </Pressable>
-      <Pressable style={styles.buttonFormat} onPress={() => router.push("/play")}>
+      <Pressable style={styles.buttonFormat} onPress={() => router.replace("/play")}>
         <Text style={styles.buttonText}>
           Start Game
         </Text>
@@ -54,7 +53,7 @@ export default function WelcomePage() {
     </View>
 
      {/*About page link*/}
-    <Pressable onPress={() => router.push("/about")}>
+    <Pressable onPress={() => router.replace("/about")}>
       <Text style={styles.learnMoreText}>
       Learn More About It's Jalapeno
     </Text>

@@ -1,25 +1,35 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 import { standardStyles } from "../styles/styles";
+import { useRouter } from "expo-router";
 
 export default function GamePage() {
-
+    const router = useRouter();
     return (
         <View style={standardStyles.container}>
             {/*Header*/}
             <View style={standardStyles.header}>
-                <View style={standardStyles.headerContent}>
-                <Text style={standardStyles.headerLogoText}> 
-                    It's Jalapeno?
-                </Text>
-                <Image style={standardStyles.logo}
-                    source={require("../assets/images/favicon.png")}
-                    accessibilityLabel="It's Jalapeno Logo">
-                </Image>
+                <View style={standardStyles.headerTopRow}>
+                    <Pressable style={standardStyles.backButton} onPress = {() => router.replace("/")}>
+                        <Text style={standardStyles.backButtonText}>{`← Back`}</Text>
+                    </Pressable>
+                    <View style={standardStyles.centerizeHeader}>
+                        <View style={{marginRight: 15}}>
+                            <View style={standardStyles.headerContent}>
+                                <Text style={standardStyles.headerLogoText}> 
+                                    It's Jalapeno?
+                                </Text>
+                                <Image style={standardStyles.logo}
+                                    source={require("../assets/images/favicon.png")}
+                                    accessibilityLabel="It's Jalapeno Logo">
+                                </Image>
+                            </View>
+                        </View>
+                    </View>
                 </View>
                 <Text style={standardStyles.headerAboutText}>
                 A Game Inspired by a Meme  
-                </Text>  
+                </Text>
             </View>
 
         </View>

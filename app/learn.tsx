@@ -1,7 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, ScrollView, Pressable } from "react-native";
 import { useRouter } from "expo-router";
-import { useFonts } from "expo-font";
 import { standardStyles } from "../styles/styles";
 
 export default function LearnPage() {  
@@ -9,21 +8,31 @@ export default function LearnPage() {
 
     return (
         <ScrollView style={standardStyles.container}>
-            {/*Header Styles*/}
-            <View style={standardStyles.header}>
-                <View style={standardStyles.headerContent}>
-                <Text style={standardStyles.headerLogoText}> 
-                    It's Jalapeno?
-                </Text>
-                <Image style={standardStyles.logo}
-                    source={require("../assets/images/favicon.png")}
-                    accessibilityLabel="It's Jalapeno Logo">
-                </Image>
-                </View>
-                <Text style={standardStyles.headerAboutText}>
-                A Game Inspired by a Meme  
-                </Text>  
-            </View>
+              {/*Header*/}
+              <View style={standardStyles.header}>
+                  <View style={standardStyles.headerTopRow}>
+
+                    <Pressable style={standardStyles.backButton} onPress = {() => router.replace("/")}>
+                        <Text style={standardStyles.backButtonText}>{`← Back`}</Text>
+                    </Pressable>
+                    <View style={standardStyles.centerizeHeader}>
+                      <View style={standardStyles.headerContent}>
+                        <Text style={standardStyles.headerLogoText}> 
+                            It's Jalapeno?
+                        </Text>
+                        <Image style={standardStyles.logo}
+                            source={require("../assets/images/favicon.png")}
+                            accessibilityLabel="It's Jalapeno Logo">
+                        </Image>
+                      </View>
+                    </View>
+                  </View>
+                  <View style={{marginLeft: 15}}>
+                    <Text style={standardStyles.headerAboutText}>
+                    A Game Inspired by a Meme  
+                    </Text>
+                  </View>
+              </View>
 
             {/*Learn how to play container */}
             <View style={styles.LearnContainer}>
