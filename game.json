@@ -1,0 +1,10 @@
+{
+    "JalapenoBee": {
+        "name": "Jalabeeno",
+        "silhouette": "JalapenoBeeSil",
+        "image": "JalapenoBee",
+        "hint": "Without Jalapeno, it's black and yellow bug",
+        "width": 250,
+        "height": 200
+    }
+}

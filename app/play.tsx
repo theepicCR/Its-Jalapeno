@@ -3,18 +3,71 @@ import { View, Text, StyleSheet, Image, Pressable, TextInput } from "react-nativ
 import { standardStyles } from "../styles/styles";
 import { useRouter } from "expo-router";
 import { useState } from "react";
+import { imageMap } from "../mapping/imageMap";
+
+interface hintColors {
+    borderColor: string,
+    bgColor: string
+}
 
 export default function GamePage() {
+    //import everything we need for game
+    const gameData = require("../game.json");
+
+    //navigation
     const router = useRouter();
 
-    let hint = "Hint";
+    //our states to control this game
+    const [hint, setHint] = useState("Hint");
+    const [guess, setGuess] = useState("");
+    const [correct, setCorrect] = useState(false);
+    const [image, setImage] = useState(gameData.JalapenoBee.silhouette);
+    const [topText, setTopText] = useState("Guess the Jalapeno!");
+    const [visible, setVisible] = useState(false);
+    const [hintcolors, setHintColors] = useState<hintColors[]>([{
+        borderColor: "#FFEE00",
+        bgColor: "#FFF4AA"
+    }])
 
-    const guessed = useState(false);
-    let topText = "Guess the Jalapeno!"
+    //this is its name
+    const name = gameData.JalapenoBee.name;
+
     let questionNum = 1;
 
-    let width = 250;
-    let height = 200;
+    let width = gameData.JalapenoBee.width;
+    let height = gameData.JalapenoBee.height;
+
+    //resetting our states for next round
+    const nextPressed = async () => {
+        setHint("Hint");
+        setGuess("");
+        setCorrect(false);
+        setImage(gameData.JalapenoBee.silhouette);
+        setHintColors([{borderColor: "#FFEE00", bgColor: "#FFF4AA"}])
+        setTopText("Guess the Jalapeno!");
+        setVisible(false);
+    }
+
+    //checking if the guess is correct
+    const checkEnter = async () => {
+        console.log("guess:", guess)
+        if (guess == name) {
+            console.log("correct!");
+            setCorrect(true);
+            setHint("Correct! Great Guess!");
+            setImage(gameData.JalapenoBee.image);
+            setHintColors([{borderColor: "#40FF00", bgColor: "#B5FF9D"}]);
+            setTopText(`It's a ${name}!`);
+            setVisible(true);
+        }
+    }
+
+    //giving the hint when the user presses the hint button
+    const giveHint = async () => {
+        if (!correct) {
+            setHint(gameData.JalapenoBee.hint);
+        }
+    }
 
 
     return (
@@ -50,17 +103,21 @@ export default function GamePage() {
 
             <View style={styles.contentContainer}>
                 <Image style={{height: height, width: width, alignSelf: "center",}}
-                    source={require("../assets/images/JalapenoBeeSil.png")}
+                    source={imageMap[image]}
                     accessibilityLabel="It's Jalapeno Logo">
                 </Image>
-                <Pressable style={styles.hintButton}>
+                <Pressable style={[styles.hintButton, {backgroundColor: hintcolors[0].bgColor, borderColor: hintcolors[0].borderColor}]} onPress = {() => giveHint()}>
                     <Text style={styles.hintButtonText}>
                         {hint}
                     </Text>
                 </Pressable>
                 <TextInput style={styles.guessEnter} 
                     placeholder="Enter Guess:"
-                    placeholderTextColor={"#4A4A4A"}>
+                    placeholderTextColor={"#4A4A4A"}
+                    maxLength={24}
+                    value={guess}
+                    onChangeText={setGuess}
+                    onSubmitEditing={checkEnter}>
                 </TextInput>
             </View>
             <View style={styles.buttons}>
@@ -69,11 +126,11 @@ export default function GamePage() {
                         {questionNum}
                     </Text>
                 </View>
-                <Pressable style={styles.continueButton}>
+                {visible && <Pressable style={styles.continueButton} onPress = {() => nextPressed()}>
                     <Text style={styles.continueButtonText}>
                         Next →
                     </Text>
-                </Pressable>
+                </Pressable>}
             </View>
 
         </View>
@@ -118,11 +175,11 @@ const styles = StyleSheet.create({
   },
   hintButton: {
     alignSelf: "center",
-    backgroundColor: "#FFF4AA",
+    //backgroundColor: "#FFF4AA",
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 20,
-    borderColor: "#FFEE00",
+    //borderColor: "#FFEE00",
     borderBottomWidth: 2,
     borderTopWidth: 2,
     borderLeftWidth: 2,
